@@ -3,7 +3,7 @@
  */
 
 function hello() {
-
+  document.getElementById("output1").innerHTML = "Hello, AP Computer Science Principles!";
   // WRITE YOUR EXERCISE 1 CODE HERE
 
   ////////////////// DO NOT MODIFY
@@ -16,7 +16,8 @@ function hello() {
  */
 
 function helloAgain() {
-
+  var input = prompt("Enter your name:");
+  document.getElementById("output2").innerHTML = "Hello, " + input + "!";
   //////////// DO NOT MODIFY
   let name; // DO NOT MODIFY
   //////////// DO NOT MODIFY
@@ -36,11 +37,13 @@ function helloAgain() {
  */
 
 function celsius() {
-
   //////////////////////////////////////////////////////// DO NOT MODIFY
   let cels = ((Math.random() * 1001) - 100).toFixed(2); // DO NOT MODIFY
   //////////////////////////////////////////////////////// DO NOT MODIFY
-
+  var cel1 = cels * (9/5);
+  var cel2 = cel1 + 32;
+  var cel3 = cel2.toFixed(2);
+  document.getElementById("output3").innerHTML = cels + " degrees Celsius equals " + cel3 + " degrees Fahrenheit.";
   // The above code generates a random number between -100 and 1000
   // (inclusive), and rounds this value to 2 decimal places.
 
@@ -56,11 +59,14 @@ function celsius() {
  */
 
 function fahrenheit() {
-
   //////////////////////////////////////////////////////// DO NOT MODIFY
   let fahr = ((Math.random() * 1001) - 100).toFixed(2); // DO NOT MODIFY
   //////////////////////////////////////////////////////// DO NOT MODIFY
-
+  var fah1 = fahr - 32;
+  var fah2 = fah1 * 5;
+  var fah3 = fah2 / 9;
+  var fah4 = fah3.toFixed(2);
+  document.getElementById("output4").innerHTML = fahr + " degrees Fahrenheit equals " + fah4 + " degrees Celsius.";
   // The above code generates a random number between -100 and 1000
   // (inclusive), and rounds this value to 2 decimal places.
 
@@ -89,6 +95,37 @@ function inches() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 5 CODE HERE
+  if (inches >= 63360) {
+    var mile1 = inches / 63360;
+    var mile2 = Math.trunc(mile1);
+    inches = inches - (63360 * mile2);
+  }
+
+  else {
+    var mile2 = 0;
+  }
+
+  if (inches >= 36) {
+    var yard1 = inches / 36;
+    var yard2 = Math.trunc(yard1);
+    inches = inches - (36 * yard2);
+  }
+
+  else {
+    var yard2 = 0;
+  }
+
+  if (inches >= 12) {
+    var feet1 = inches / 12;
+    var feet2 = Math.trunc(feet1);
+    inches = inches - (12 * feet2);
+  }
+
+  else {
+    var feet2 = 0;
+  }
+
+  document.getElementById("output5").innerHTML = "Miles: " + mile2 + "\n" + "Yards: " + yard2 + "\n" + "Feet: " + feet2 + "\n" + "Inches: " + inches;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
