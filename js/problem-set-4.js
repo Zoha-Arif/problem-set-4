@@ -125,13 +125,10 @@ function inches() {
     var feet2 = 0;
   }
 
-  document.getElementById("output5").innerHTML = "Miles: " + mile2 + "\n" + "Yards: " + yard2 + "\n" + "Feet: " + feet2 + "\n" + "Inches: " + inches;
-
+  document.getElementById("output5").innerHTML = "Miles:" + mile2 + "Yards: " + yard2  +  "Feet: " + feet2 + "Inches: " + inches;
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
-}
-
 /*
  * Centimeters. 5 points.
  */
@@ -149,8 +146,26 @@ function centimeters() {
   let centimeters = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 6 CODE HERE
+  if (centimeters >= 100000) {
+    var cent1 = centimeters / 100000;
+    var cent2 = Math.trunc(cent1);
+    centimeters = centimeters - (100000 * cent2);
+  }
 
+  else {
+    var cent2 = 0;
+  }
+
+  if (centimeters >= 100) {
+    var met1 = centimeters / 100;
+    var met2 = Math.trunc(met1);
+    centimeters = centimeters - (36 * met2);
+  }
+
+  else {
+    var met2 = 0;
+
+document.getElementById("output6").innerHTML = "Kilometers: " + cent2 + "Meters: " + met2  +  "Centimeters: " + centimeters;
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -173,7 +188,9 @@ function fluidOunces() {
   let fluidOunces = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 7 CODE HERE
+  if (fluidOunces >= 128) {
+    
+  }
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
