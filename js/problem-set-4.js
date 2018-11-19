@@ -189,9 +189,46 @@ function fluidOunces() {
   /////////////////////////// DO NOT MODIFY
 
   if (fluidOunces >= 128) {
-    
+    var floun1 = fluidOunces / 128;
+    var floun2 = Math.trunc(floun1);
+    fluidOunces = fluidOunces - (128 * floun2);
   }
 
+  else {
+    var floun2 = 0;
+  }
+
+  if (fluidOunces >= 32) {
+    var quarts1 = fluidOunces / 32;
+    var quarts2 = Math.trunc(quarts1);
+    fluidOunces = fluidOunces - (32 * quarts2);
+  }
+
+  else {
+    var quarts2 = 0;
+  }
+
+  if (fluidOunces >= 16) {
+    var pints1 = fluidOunces / 16;
+    var pints2 = Math.trunc(pints1);
+    fluidOunces = fluidOunces - (32 * pints2);
+  }
+
+  else {
+    var pints2 = 0;
+  }
+
+  if (fluidOunces >= 8) {
+    var cups1 = fluidOunces / 8;
+    var cups2 = Math.trunc(cups1);
+    fluidOunces = fluidOunces - (8 * cups2);
+  }
+
+  else {
+    var cups2 = 0;
+  }
+
+  document.getElementById("output7").innerHTML = "Gallons: " + floun2 + "Quarts: " + quarts2  +  "Pints: " + pint2 + "Cups:" + cups2 + "Fluid Ounces" + fluidOunces;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -214,8 +251,27 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 8 CODE HERE
+  if (ounces >= 32000) {
+    var ton1 = ounces / 8;
+    var ton2 = Math.trunc(oun1);
+    fluidOunces = fluidOunces - (32000 * ton2);
+  }
 
+  else {
+    var ton2 = 0;
+  }
+
+  if (ounces >= 16) {
+    var pounds1 = ounces / 8;
+    var pounds2 = Math.trunc(pounds1);
+    fluidOunces = fluidOunces - (32000 * pounds2);
+  }
+
+  else {
+    var pounds2 = 0;
+  }
+
+  document.getElementById("output8").innerHTML = "Tons: " + ton2 + "Pounds" + pounds2 + "Ounces:" + ounces;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -238,7 +294,47 @@ function money() {
   let pennies = input; // DO NOT MODIFY
   /////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 9 CODE HERE
+  if (pennies >= 100) {
+    var dol1 = pennies / 8;
+    var dol2 = Math.trunc(dol1);
+    fluidOunces = fluidOunces - (100 * dol2);
+  }
+
+  else {
+    var dol2 = 0;
+  }
+
+  if (pennies >= 0.25) {
+    var quarters1 = pennies / 0.25;
+    var quarters2 = Math.trunc(quarters1);
+    pennies = pennies - (0.25 * quarters2);
+  }
+
+  else {
+    var quarters2 = 0;
+  }
+
+  if (pennies >= 0.10) {
+    var dimes1 = pennies / 0.10;
+    var dimes2 = Math.trunc(dimes1);
+    pennies = pennies - (0.10 * dimes2);
+  }
+
+  else {
+    var dimes2 = 0;
+  }
+
+  if (pennies >= 0.05) {
+    var nickels1 = pennies / 0.05;
+    var nickels2 = Math.trunc(nickels1);
+    pennies = pennies - (0.05 * nickels2);
+  }
+
+  else {
+    var nickels2 = 0;
+  }
+
+  document.getElementById("output8").innerHTML = "Dollars: " + dol2 + "Quarters" + quarters2 + "Dimes:" + dimes2 + "Pennies:" + pennies;
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -262,7 +358,47 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 10 CODE HERE
+  if (amount >= 0.25) {
+    var quar1 = amount / 0.25;
+    var quar2 = Math.trunc(quar1);
+    amount = amount - (0.25 * quar2);
+  }
+
+  else {
+    var quar2 = 0;
+  }
+
+  if (amount >= 0.10) {
+    var dim1 = amount / 0.10;
+    var dim2 = Math.trunc(dim1);
+    amount = amount - (0.10 * dim2);
+  }
+
+  else {
+    var dim2 = 0;
+  }
+
+  if (amount >= 0.05) {
+    var nick1 = amount / 0.05;
+    var nick2 = Math.trunc(nick1);
+    amount = amount - (0.05 * nick2);
+  }
+
+  else {
+    var nick2 = 0;
+  }
+
+  if (amount >= 0.01) {
+    var pen1 = amount / 0.01;
+    var pen2 = Math.trunc(pen1);
+    amount = amount - (0.01 * pen2);
+  }
+
+  else {
+    var pen2 = 0;
+  }
+
+  document.getElementById("output8").innerHTML = "Quarters" + quar2 + "Dimes" + dim2 + "Nickels" + nick2 + "Pennies" + pen2; 
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
