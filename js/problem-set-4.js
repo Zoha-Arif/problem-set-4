@@ -125,13 +125,18 @@ function inches() {
     var feet2 = 0;
   }
 
-  document.getElementById("output5").innerHTML = "Miles:" + mile2 + "Yards: " + yard2  +  "Feet: " + feet2 + "Inches: " + inches;
+  if (inches == null){
+    inches = 0;
+  }
+
+  document.getElementById("output5").innerHTML = `Miles: ${mile2} <br/> Yards: ${yard2} <br/> Feet: ${feet2} <br/> Inches: ${inches}`;
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
 /*
  * Centimeters. 5 points.
  */
+}
 
 function centimeters() {
 
@@ -159,13 +164,18 @@ function centimeters() {
   if (centimeters >= 100) {
     var met1 = centimeters / 100;
     var met2 = Math.trunc(met1);
-    centimeters = centimeters - (36 * met2);
+    centimeters = centimeters - (100 * met2);
   }
 
   else {
     var met2 = 0;
+  }
 
-document.getElementById("output6").innerHTML = "Kilometers: " + cent2 + "Meters: " + met2  +  "Centimeters: " + centimeters;
+  if (centimeters == null){
+    centimeters = 0;
+  }
+
+document.getElementById("output6").innerHTML = `Kilometers: ${cent2} <br/> Meters: ${met2} <br/> Centimeters: ${centimeters}`;
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -228,7 +238,11 @@ function fluidOunces() {
     var cups2 = 0;
   }
 
-  document.getElementById("output7").innerHTML = "Gallons: " + floun2 + "Quarts: " + quarts2  +  "Pints: " + pint2 + "Cups:" + cups2 + "Fluid Ounces" + fluidOunces;
+  if (fluidOunces == null){
+    fluidOunces = 0;
+  }
+
+  document.getElementById("output7").innerHTML = `Gallons: ${floun2} <br/> Quarts: ${quarts2} <br/> Pints: ${pints2} <br/> Cups: ${cups2} <br/> Fluid Ounces: ${fluidOunces}`;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -252,9 +266,9 @@ function ounces() {
   ////////////////////// DO NOT MODIFY
 
   if (ounces >= 32000) {
-    var ton1 = ounces / 8;
-    var ton2 = Math.trunc(oun1);
-    fluidOunces = fluidOunces - (32000 * ton2);
+    var ton1 = ounces / 32000;
+    var ton2 = Math.trunc(ton1);
+    ounces = ounces - (32000 * ton2);
   }
 
   else {
@@ -262,16 +276,20 @@ function ounces() {
   }
 
   if (ounces >= 16) {
-    var pounds1 = ounces / 8;
+    var pounds1 = ounces / 16;
     var pounds2 = Math.trunc(pounds1);
-    fluidOunces = fluidOunces - (32000 * pounds2);
+    ounces = ounces - (16 * pounds2);
   }
 
   else {
     var pounds2 = 0;
   }
 
-  document.getElementById("output8").innerHTML = "Tons: " + ton2 + "Pounds" + pounds2 + "Ounces:" + ounces;
+  if (ounces == null){
+    ounces = 0;
+  }
+
+  document.getElementById("output8").innerHTML = `Tons: ${ton2} <br/> Pounds: ${pounds2} <br/> Ounces: ${ounces}`;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -295,46 +313,50 @@ function money() {
   /////////////////////// DO NOT MODIFY
 
   if (pennies >= 100) {
-    var dol1 = pennies / 8;
+    var dol1 = pennies / 100;
     var dol2 = Math.trunc(dol1);
-    fluidOunces = fluidOunces - (100 * dol2);
+    pennies = pennies - (100 * dol2);
   }
 
   else {
     var dol2 = 0;
   }
 
-  if (pennies >= 0.25) {
-    var quarters1 = pennies / 0.25;
+  if (pennies >= 25) {
+    var quarters1 = pennies / 25;
     var quarters2 = Math.trunc(quarters1);
-    pennies = pennies - (0.25 * quarters2);
+    pennies = pennies - (25 * quarters2);
   }
 
   else {
     var quarters2 = 0;
   }
 
-  if (pennies >= 0.10) {
-    var dimes1 = pennies / 0.10;
+  if (pennies >= 10) {
+    var dimes1 = pennies / 10;
     var dimes2 = Math.trunc(dimes1);
-    pennies = pennies - (0.10 * dimes2);
+    pennies = pennies - (10 * dimes2);
   }
 
   else {
     var dimes2 = 0;
   }
 
-  if (pennies >= 0.05) {
-    var nickels1 = pennies / 0.05;
+  if (pennies >= 5) {
+    var nickels1 = pennies / 5;
     var nickels2 = Math.trunc(nickels1);
-    pennies = pennies - (0.05 * nickels2);
+    pennies = pennies - (5 * nickels2);
   }
 
   else {
     var nickels2 = 0;
   }
 
-  document.getElementById("output8").innerHTML = "Dollars: " + dol2 + "Quarters" + quarters2 + "Dimes:" + dimes2 + "Pennies:" + pennies;
+  if (pennies == null){
+    pennies = 0;
+  }
+
+  document.getElementById("output9").innerHTML = `Dollars: ${dol2} <br/> Quarters: ${quarters2} <br/> Dimes: ${dimes2} <br/> Nickels: ${nickels2} <br/> Pennies: ${pennies}`;
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -390,7 +412,7 @@ function change() {
 
   if (amount >= 0.01) {
     var pen1 = amount / 0.01;
-    var pen2 = Math.trunc(pen1);
+    var pen2 = Math.round(pen1);
     amount = amount - (0.01 * pen2);
   }
 
@@ -398,7 +420,15 @@ function change() {
     var pen2 = 0;
   }
 
-  document.getElementById("output8").innerHTML = "Quarters" + quar2 + "Dimes" + dim2 + "Nickels" + nick2 + "Pennies" + pen2; 
+  var total = quar2 + dim2 + nick2 + pen2;
+
+  if (total == 1){
+    document.getElementById("output10").innerHTML = `${total} coin.`
+  }
+
+  else {
+    document.getElementById("output10").innerHTML = `${total} coins.`
+  }
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
